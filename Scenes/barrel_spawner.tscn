@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dylx27rfk52yo"]
+
+[ext_resource type="Script" path="res://Scripts/spawn_timer.gd" id="1_lbcge"]
+[ext_resource type="Script" path="res://Scripts/barrel_spawner.gd" id="1_q3ma6"]
+
+[node name="BarrelSpawner" type="Node2D"]
+script = ExtResource("1_q3ma6")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+script = ExtResource("1_lbcge")

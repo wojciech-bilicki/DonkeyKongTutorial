@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6m62coecgu6"]
+
+[ext_resource type="Texture2D" uid="uid://csi07pbkvtu12" path="res://Assets/Hammer.png" id="1_bscu0"]
+[ext_resource type="Script" path="res://Scripts/hammer.gd" id="1_q8erh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0rbq"]
+size = Vector2(8, 9)
+
+[node name="Hammer" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_q8erh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_bscu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_s0rbq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

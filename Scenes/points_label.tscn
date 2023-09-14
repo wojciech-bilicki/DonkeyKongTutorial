@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://g0p6miapcowr"]
+
+[ext_resource type="Script" path="res://Scripts/points_label.gd" id="1_b7w0j"]
+[ext_resource type="FontFile" uid="uid://4ay5p4q02m81" path="res://Assets/Retro Gaming.ttf" id="1_eh7jr"]
+
+[node name="PointsLabel" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_eh7jr")
+theme_override_font_sizes/font_size = 16
+script = ExtResource("1_b7w0j")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

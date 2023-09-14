@@ -1,0 +1,322 @@
+[gd_scene load_steps=11 format=3 uid="uid://bohi3icddd3d"]
+
+[ext_resource type="Texture2D" uid="uid://de0mqpgcx2lwk" path="res://Assets/screem.jpg" id="1_4h4sh"]
+[ext_resource type="PackedScene" uid="uid://brv27lb6lvel2" path="res://Scenes/platform.tscn" id="2_fsuoi"]
+[ext_resource type="PackedScene" uid="uid://c7m3ku44r8e66" path="res://Scenes/ladder.tscn" id="3_2srjj"]
+[ext_resource type="Texture2D" uid="uid://dlsc3nud4wgqi" path="res://Assets/DonkeyKong.png" id="4_jb7vw"]
+[ext_resource type="PackedScene" uid="uid://dqka02bkf2afk" path="res://Scenes/player.tscn" id="6_ocowa"]
+[ext_resource type="PackedScene" uid="uid://dylx27rfk52yo" path="res://Scenes/barrel_spawner.tscn" id="7_gi5r5"]
+[ext_resource type="PackedScene" uid="uid://b6m62coecgu6" path="res://Scenes/hammer.tscn" id="8_our0n"]
+[ext_resource type="Script" path="res://Scripts/points_manager.gd" id="9_bjmgv"]
+[ext_resource type="PackedScene" uid="uid://ch72anv15xyl4" path="res://Scenes/princess.tscn" id="10_m6y0q"]
+[ext_resource type="PackedScene" uid="uid://dlgy0os4wmmt2" path="res://Scenes/ui.tscn" id="10_r50x2"]
+
+[node name="main" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1353, -197)
+texture = ExtResource("1_4h4sh")
+
+[node name="Ladders" type="Node" parent="."]
+
+[node name="Ladders1" type="Node" parent="Ladders"]
+
+[node name="Ladder" parent="Ladders/Ladders1" instance=ExtResource("3_2srjj")]
+position = Vector2(-73, 380)
+
+[node name="Ladder3" parent="Ladders/Ladders1" instance=ExtResource("3_2srjj")]
+position = Vector2(-74, 312)
+length = 1.0
+
+[node name="Ladder2" parent="Ladders/Ladders1" instance=ExtResource("3_2srjj")]
+position = Vector2(322, 352)
+length = 2.5
+
+[node name="Ladders2" type="Node" parent="Ladders"]
+
+[node name="Ladder" parent="Ladders/Ladders2" instance=ExtResource("3_2srjj")]
+position = Vector2(105, 226)
+length = 3.25
+
+[node name="Ladder2" parent="Ladders/Ladders2" instance=ExtResource("3_2srjj")]
+position = Vector2(-289, 221)
+
+[node name="Ladders3" type="Node" parent="Ladders"]
+
+[node name="Ladder" parent="Ladders/Ladders3" instance=ExtResource("3_2srjj")]
+position = Vector2(-185, 141)
+length = 1.0
+
+[node name="Ladder2" parent="Ladders/Ladders3" instance=ExtResource("3_2srjj")]
+position = Vector2(-188, 44)
+length = 1.5
+
+[node name="Ladder3" parent="Ladders/Ladders3" instance=ExtResource("3_2srjj")]
+position = Vector2(16, 91)
+length = 3.5
+can_barrel_go_down = true
+barrel_goes_down_chance = 0.25
+
+[node name="Ladder4" parent="Ladders/Ladders3" instance=ExtResource("3_2srjj")]
+position = Vector2(350, 95)
+length = 2.5
+barrel_goes_down_chance = 0.75
+
+[node name="Ladders4" type="Node" parent="Ladders"]
+
+[node name="Ladder" parent="Ladders/Ladders4" instance=ExtResource("3_2srjj")]
+position = Vector2(222, 4)
+length = 1.0
+
+[node name="Ladder2" parent="Ladders/Ladders4" instance=ExtResource("3_2srjj")]
+position = Vector2(221, -89)
+length = 1.5
+
+[node name="Ladder3" parent="Ladders/Ladders4" instance=ExtResource("3_2srjj")]
+position = Vector2(-77, -50)
+length = 3.0
+
+[node name="Ladder4" parent="Ladders/Ladders4" instance=ExtResource("3_2srjj")]
+position = Vector2(-273, -51)
+length = 2.5
+can_barrel_go_down = true
+
+[node name="Ladders5" type="Node" parent="Ladders"]
+
+[node name="Ladder" parent="Ladders/Ladders5" instance=ExtResource("3_2srjj")]
+position = Vector2(16, -148)
+length = 1.0
+
+[node name="Ladder2" parent="Ladders/Ladders5" instance=ExtResource("3_2srjj")]
+position = Vector2(15, -238)
+length = 1.0
+
+[node name="Ladder3" parent="Ladders/Ladders5" instance=ExtResource("3_2srjj")]
+position = Vector2(317, -194)
+length = 3.5
+can_barrel_go_down = true
+
+[node name="Ladders6" type="Node" parent="Ladders"]
+
+[node name="Ladder" parent="Ladders/Ladders6" instance=ExtResource("3_2srjj")]
+position = Vector2(97, -314)
+
+[node name="Ladder2" parent="Ladders/Ladders6" instance=ExtResource("3_2srjj")]
+position = Vector2(-121, -300)
+length = 1.5
+
+[node name="Ladder3" parent="Ladders/Ladders6" instance=ExtResource("3_2srjj")]
+position = Vector2(-179, -300)
+length = 1.5
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platforms1" type="Node" parent="Platforms"]
+
+[node name="Platform" parent="Platforms/Platforms1" instance=ExtResource("2_fsuoi")]
+position = Vector2(-352, 432)
+
+[node name="Platform2" parent="Platforms/Platforms1" instance=ExtResource("2_fsuoi")]
+position = Vector2(-256, 432)
+
+[node name="Platform3" parent="Platforms/Platforms1" instance=ExtResource("2_fsuoi")]
+position = Vector2(-160, 432)
+
+[node name="Platform4" parent="Platforms/Platforms1" instance=ExtResource("2_fsuoi")]
+position = Vector2(-64, 432)
+
+[node name="Platform5" parent="Platforms/Platforms1" instance=ExtResource("2_fsuoi")]
+position = Vector2(32, 428)
+
+[node name="Platform6" parent="Platforms/Platforms1" instance=ExtResource("2_fsuoi")]
+position = Vector2(128, 423)
+
+[node name="Platform7" parent="Platforms/Platforms1" instance=ExtResource("2_fsuoi")]
+position = Vector2(224, 418)
+
+[node name="Platform8" parent="Platforms/Platforms1" instance=ExtResource("2_fsuoi")]
+position = Vector2(320, 413)
+
+[node name="Platforms2" type="Node" parent="Platforms"]
+
+[node name="Platform" parent="Platforms/Platforms2" instance=ExtResource("2_fsuoi")]
+position = Vector2(309, 303)
+can_be_disabled = true
+
+[node name="Platform2" parent="Platforms/Platforms2" instance=ExtResource("2_fsuoi")]
+position = Vector2(213, 299)
+
+[node name="Platform3" parent="Platforms/Platforms2" instance=ExtResource("2_fsuoi")]
+position = Vector2(117, 295)
+
+[node name="Platform4" parent="Platforms/Platforms2" instance=ExtResource("2_fsuoi")]
+position = Vector2(21, 287)
+
+[node name="Platform5" parent="Platforms/Platforms2" instance=ExtResource("2_fsuoi")]
+position = Vector2(-75, 283)
+can_be_disabled = true
+
+[node name="Platform6" parent="Platforms/Platforms2" instance=ExtResource("2_fsuoi")]
+position = Vector2(-171, 278)
+
+[node name="Platform7" parent="Platforms/Platforms2" instance=ExtResource("2_fsuoi")]
+position = Vector2(-268, 273)
+
+[node name="Platform8" parent="Platforms/Platforms2" instance=ExtResource("2_fsuoi")]
+position = Vector2(-365, 268)
+
+[node name="Platforms3" type="Node" parent="Platforms"]
+
+[node name="Platform" parent="Platforms/Platforms3" instance=ExtResource("2_fsuoi")]
+position = Vector2(-291, 181)
+can_be_disabled = true
+
+[node name="Platform2" parent="Platforms/Platforms3" instance=ExtResource("2_fsuoi")]
+position = Vector2(-194, 176)
+
+[node name="Platform3" parent="Platforms/Platforms3" instance=ExtResource("2_fsuoi")]
+position = Vector2(-98, 171)
+
+[node name="Platform4" parent="Platforms/Platforms3" instance=ExtResource("2_fsuoi")]
+position = Vector2(-2, 166)
+
+[node name="Platform5" parent="Platforms/Platforms3" instance=ExtResource("2_fsuoi")]
+position = Vector2(93, 160)
+can_be_disabled = true
+
+[node name="Platform6" parent="Platforms/Platforms3" instance=ExtResource("2_fsuoi")]
+position = Vector2(190, 154)
+
+[node name="Platform7" parent="Platforms/Platforms3" instance=ExtResource("2_fsuoi")]
+position = Vector2(285, 147)
+
+[node name="Platform8" parent="Platforms/Platforms3" instance=ExtResource("2_fsuoi")]
+position = Vector2(381, 142)
+
+[node name="Platforms4" type="Node" parent="Platforms"]
+
+[node name="Platform" parent="Platforms/Platforms4" instance=ExtResource("2_fsuoi")]
+position = Vector2(318, 40)
+can_be_disabled = true
+
+[node name="Platform2" parent="Platforms/Platforms4" instance=ExtResource("2_fsuoi")]
+position = Vector2(222, 35)
+
+[node name="Platform3" parent="Platforms/Platforms4" instance=ExtResource("2_fsuoi")]
+position = Vector2(125, 31)
+
+[node name="Platform4" parent="Platforms/Platforms4" instance=ExtResource("2_fsuoi")]
+position = Vector2(29, 24)
+can_be_disabled = true
+
+[node name="Platform5" parent="Platforms/Platforms4" instance=ExtResource("2_fsuoi")]
+position = Vector2(-68, 18)
+
+[node name="Platform6" parent="Platforms/Platforms4" instance=ExtResource("2_fsuoi")]
+position = Vector2(-165, 11)
+
+[node name="Platform7" parent="Platforms/Platforms4" instance=ExtResource("2_fsuoi")]
+position = Vector2(-261, 5)
+
+[node name="Platform8" parent="Platforms/Platforms4" instance=ExtResource("2_fsuoi")]
+position = Vector2(-357, -1)
+
+[node name="Platforms5" type="Node" parent="Platforms"]
+
+[node name="Platform" parent="Platforms/Platforms5" instance=ExtResource("2_fsuoi")]
+position = Vector2(-269, -105)
+can_be_disabled = true
+
+[node name="Platform2" parent="Platforms/Platforms5" instance=ExtResource("2_fsuoi")]
+position = Vector2(-173, -109)
+
+[node name="Platform3" parent="Platforms/Platforms5" instance=ExtResource("2_fsuoi")]
+position = Vector2(-77, -111)
+can_be_disabled = true
+
+[node name="Platform4" parent="Platforms/Platforms5" instance=ExtResource("2_fsuoi")]
+position = Vector2(19, -115)
+
+[node name="Platform5" parent="Platforms/Platforms5" instance=ExtResource("2_fsuoi")]
+position = Vector2(115, -120)
+
+[node name="Platform6" parent="Platforms/Platforms5" instance=ExtResource("2_fsuoi")]
+position = Vector2(211, -125)
+
+[node name="Platform7" parent="Platforms/Platforms5" instance=ExtResource("2_fsuoi")]
+position = Vector2(307, -128)
+
+[node name="Platform8" parent="Platforms/Platforms5" instance=ExtResource("2_fsuoi")]
+position = Vector2(402, -135)
+
+[node name="Platforms6" type="Node" parent="Platforms"]
+
+[node name="Platform" parent="Platforms/Platforms6" instance=ExtResource("2_fsuoi")]
+position = Vector2(331, -260)
+can_be_disabled = true
+
+[node name="Platform2" parent="Platforms/Platforms6" instance=ExtResource("2_fsuoi")]
+position = Vector2(235, -264)
+
+[node name="Platform3" parent="Platforms/Platforms6" instance=ExtResource("2_fsuoi")]
+position = Vector2(139, -267)
+can_be_disabled = true
+
+[node name="Platform4" parent="Platforms/Platforms6" instance=ExtResource("2_fsuoi")]
+position = Vector2(43, -267)
+can_be_disabled = true
+
+[node name="Platform5" parent="Platforms/Platforms6" instance=ExtResource("2_fsuoi")]
+position = Vector2(-52, -267)
+
+[node name="Platform6" parent="Platforms/Platforms6" instance=ExtResource("2_fsuoi")]
+position = Vector2(-148, -267)
+
+[node name="Platform7" parent="Platforms/Platforms6" instance=ExtResource("2_fsuoi")]
+position = Vector2(-244, -267)
+
+[node name="Platform8" parent="Platforms/Platforms6" instance=ExtResource("2_fsuoi")]
+position = Vector2(-340, -267)
+
+[node name="Platforms7" type="Node" parent="Platforms"]
+
+[node name="Platform" parent="Platforms/Platforms7" instance=ExtResource("2_fsuoi")]
+position = Vector2(77, -354)
+can_be_disabled = true
+
+[node name="Platform2" parent="Platforms/Platforms7" instance=ExtResource("2_fsuoi")]
+position = Vector2(-18, -354)
+
+[node name="Platform3" parent="Platforms/Platforms7" instance=ExtResource("2_fsuoi")]
+position = Vector2(-150, -335)
+can_be_disabled = true
+
+[node name="Kong" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-310, -347)
+scale = Vector2(4, 4)
+texture = ExtResource("4_jb7vw")
+
+[node name="Player" parent="." node_paths=PackedStringArray("ui") instance=ExtResource("6_ocowa")]
+position = Vector2(-100, -162)
+scale = Vector2(4, 4)
+ui = NodePath("../UI")
+
+[node name="BarrelSpawner" parent="." instance=ExtResource("7_gi5r5")]
+position = Vector2(-311, -297)
+
+[node name="Hammer" parent="." instance=ExtResource("8_our0n")]
+position = Vector2(-396, 201)
+scale = Vector2(4, 4)
+
+[node name="PointsManager" type="Node" parent="."]
+script = ExtResource("9_bjmgv")
+
+[node name="UI" parent="." instance=ExtResource("10_r50x2")]
+
+[node name="Princess" parent="." node_paths=PackedStringArray("ui") instance=ExtResource("10_m6y0q")]
+position = Vector2(-158, -396)
+scale = Vector2(4, 4)
+ui = NodePath("../UI")
